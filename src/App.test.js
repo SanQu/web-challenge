@@ -42,7 +42,7 @@ it('getDetails and check new detail and list view state', async () => {
   
   await appComponent.instance().getDetails('mockurl');
   
-  expect(appComponent.state().selectedHouse).toEqual([{name: 'mockname'}]);
+  expect(appComponent.state().selectedHouse).toContainEqual({name: 'mockname'});
   expect(appComponent.state().showDetailView).toBe(true);
   expect(appComponent.state().showListView).toBe(false);
 });

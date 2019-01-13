@@ -44,7 +44,22 @@ class App extends Component {
       const response = await fetch(url);
       const selectedHouse = await response.json();
 
-      this.setState({selectedHouse, showDetailView: true, showListView: false});
+      let selectedHouseFormattedValues = [...selectedHouse];
+
+      selectedHouseFormattedValues.titles = this.arrayToListMapper(selectedHouseFormattedValues.titles);
+      selectedHouseFormattedValues.seats = this.arrayToListMapper(selectedHouseFormattedValues.seats);
+      selectedHouseFormattedValues.coatOfArms = this.stringToArrayMapper(selectedHouseFormattedValues.coatOfArms);
+      selectedHouseFormattedValues.swornMembers = this.arrayToListMapper(selectedHouseFormattedValues.swornMembers);
+
+      this.setState({selectedHouse: selectedHouseFormattedValues, showDetailView: true, showListView: false});
+    }
+
+    this.arrayToListMapper = list => {
+      return (list && list.length > 0) ? list.map((item, index) => (<div key={index}>{item}</div>)) : null;
+    }
+    
+    this.stringToArrayMapper = list => {
+      return (list && list.length > 0) ? list.split(', ').map((item, index) => (<div key={index}>{item}</div>)) : null;
     }
 
     this.backToListView = () => {

@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy": "yarn build",
-    "deploy": "aws s3 sync build/ s3://web-challenge-v1"
+    "deploy": "aws s3 sync build/ s3://web-challenge"
   },
   "eslintConfig": {
     "extends": "react-app"

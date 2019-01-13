@@ -1,5 +1,5 @@
 # web challenge
-http://web-challenge-v1.s3-website-eu-west-1.amazonaws.com/
+http://web-challenge.s3-website-eu-west-1.amazonaws.com/
 
 # Install
 ```
