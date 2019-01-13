@@ -44,7 +44,7 @@ class App extends Component {
       const response = await fetch(url);
       const selectedHouse = await response.json();
 
-      let selectedHouseFormattedValues = [...selectedHouse];
+      let selectedHouseFormattedValues = {...selectedHouse};
 
       selectedHouseFormattedValues.titles = this.arrayToListMapper(selectedHouseFormattedValues.titles);
       selectedHouseFormattedValues.seats = this.arrayToListMapper(selectedHouseFormattedValues.seats);
